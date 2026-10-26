@@ -276,8 +276,7 @@ void experiment(int n, int scenario, const char* name) {
     }
 
     task2(text, pattern, false);
-    cout << n << '\t' << name << '\t' << firstPos << '\t'
-         << comparisons << '\t' << checkedPositions << '\n';
+    cout << n << '\t' << name << '\t' << firstPos << '\t' << comparisons << '\t' << checkedPositions << '\n';
 }
 
 void task7() {
