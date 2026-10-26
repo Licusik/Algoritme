@@ -62,8 +62,7 @@ bool task2(const char p[], int m, const int want[]) {
 
     for (int i = 0; i < m; i++) {
         if (pi[i] != want[i]) {
-            cout << "Mismatch: index " << i << ", char " << p[i]
-                 << ", expected " << want[i] << ", got " << pi[i] << '\n';
+            cout << "Mismatch: index " << i << ", char " << p[i] << ", expected " << want[i] << ", got " << pi[i] << '\n';
             return false;
         }
     }
@@ -116,8 +115,7 @@ int kmp(const char t[], int n, const char p[], int m, const int pi[],int res[], 
             bool eq = (t[i] == p[k]);
 
             if (trace) {
-                cout << "text " << i << ", pattern " << k << ": '" << t[i]
-                     << "' vs '" << p[k] << "' - " << (eq ? "match" : "mismatch");
+                cout << "text " << i << ", pattern " << k << ": '" << t[i] << "' vs '" << p[k] << "' - " << (eq ? "match" : "mismatch");
             }
 
             if (eq) {
@@ -221,20 +219,16 @@ bool check(const char t[], const char p[], int wantFirst, const int want[], int 
     showPos(res, cnt);
     cout << '\n';
 
-    bool ok = first == wantFirst && cnt == wantCnt && Compmasiv(res, want, wantCnt)
-        && firstN == first && cntN == cnt && Compmasiv(resN, res, cnt);
+    bool ok = first == wantFirst && cnt == wantCnt && Compmasiv(res, want, wantCnt) && firstN == first && cntN == cnt && Compmasiv(resN, res, cnt);
 
-    cout << "Comparisons: KMP " << cPi + cAll << " (prefix " << cPi << ", search " << cAll
-         << "), naive " << cNaive << " - " << (ok ? "OK" : "FAIL") << '\n';
+    cout << "Comparisons: KMP " << cPi + cAll << " (prefix " << cPi << ", search " << cAll << "), naive " << cNaive << " - " << (ok ? "OK" : "FAIL") << '\n';
 
     return ok;
 }
 
 bool testFind() {
-    const char* texts[] = {"algorithm", "aaaa", "abababa", "abc", "mississippi",
-                           "abcabcabd", "no matches here", "", "aaaaaaab", "abracadabra"};
-    const char* pats[] = {"rith", "aa", "aba", "abcd", "issi",
-                          "abcabd", "xyz", "a", "aaab", "abra"};
+    const char* texts[] = {"algorithm", "aaaa", "abababa", "abc", "mississippi", "abcabcabd", "no matches here", "", "aaaaaaab", "abracadabra"};
+    const char* pats[] = {"rith", "aa", "aba", "abcd", "issi","abcabd", "xyz", "a", "aaab", "abra"};
     int first[] = {4, 0, 0, -1, 1, 3, -1, -1, 4, 0};
     int cnt[] = {1, 3, 3, 0, 2, 1, 0, 0, 1, 2};
     int all[10][3] = {
